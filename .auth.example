@@ -1,0 +1,14 @@
+import keyring
+
+api_keys = ["your_key_1_here",
+            "your_key_2_here",
+            "your_key_3_here"]
+
+key_index = 0
+
+for key_index, api_key in enumerate(api_keys, start=1):
+    keyring.set_password(
+        service_name="gemini_api_key",
+        username=f"api_user{key_index}",
+        password=api_key,
+    )
